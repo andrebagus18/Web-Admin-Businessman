@@ -1,0 +1,44 @@
+.container {
+  max-width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-inline: 200px;
+}
+
+.dropdown-toggle {
+  font-weight: 700;
+  font-size: 30px;
+  padding: 0;
+  border: 0;
+}
+
+.dropdown-toggle:hover {
+  color: white;
+}
+
+.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  background-color: #111111;
+}
+
+.dropdown-item:hover {
+  background-color: #0dcaf0;
+}
+
+.dashboard {
+  padding-top: 20px;
+  padding-inline: 6rem;
+  transition: all 0.65s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.btnReset {
+  width: 150px;
+  height: 35px;
+  margin-inline: 25px;
+  margin-top: 3px;
+}

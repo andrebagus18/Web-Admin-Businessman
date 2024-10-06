@@ -1,0 +1,70 @@
+.modal.active {
+  display: block;
+  overflow: auto;
+  opacity: inherit;
+  top: 150px;
+}
+
+.modal {
+  animation: fadeIn 0.4s;
+}
+
+.modal-done {
+  display: flex;
+  justify-content: center;
+}
+
+.done {
+  width: 200px;
+}
+
+.modal-content {
+  width: 500px;
+  height: 400px;
+}
+
+.modal-header {
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  border: none;
+}
+
+span {
+  width: 50%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-click {
+  width: 100px;
+  height: 100px;
+  font-size: 100px;
+  color: green;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: none;
+  padding: 0;
+  padding-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

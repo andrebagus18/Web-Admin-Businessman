@@ -1,0 +1,39 @@
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+#sidebar {
+  width: 300px;
+}
+
+.sidebar {
+  position: fixed;
+  width: 280px;
+  height: 100vh;
+  margin-left: -300px;
+  margin-top: -70px;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.65s ease;
+  transform-origin: 0.5em 50%;
+}
+
+.sidebar.active {
+  margin-left: 0;
+  z-index: 100;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.bi {
+  vertical-align: -0.125em;
+  pointer-events: none;
+  fill: currentColor;
+}
+
+.btn-close {
+  display: block;
+  margin-left: 40px;
+  margin-bottom: 40px;
+}

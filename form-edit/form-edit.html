@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Data</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="backTo mb-3" style="width: 100px">
+        <a
+          class="btn btn-primary w-100 text-xxl-center"
+          href="../index.html"
+          role="button"
+          >Back</a
+        >
+      </div>
+      <h2>Edit Data</h2>
+      <form id="editForm">
+        <div class="form-group">
+          <label for="customer">Customer</label>
+          <input
+            type="text"
+            class="form-control"
+            id="editCustomer"
+            name="customer"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="idOrder">ID Order</label>
+          <input
+            type="text"
+            class="form-control"
+            id="editIdOrder"
+            name="idOrder"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="dp">Down Payment</label>
+          <input
+            type="number"
+            class="form-control"
+            id="editDp"
+            name="dp"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="desc">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="editDesc"
+            name="desc"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="dateIn">Date In</label>
+          <input type="date" class="form-control" id="editDateIn" name="date" />
+        </div>
+        <div class="form-group">
+          <label for="dateOut">Date Out</label>
+          <input
+            type="date"
+            class="form-control"
+            id="editDateOut"
+            name="date"
+          />
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select
+            class="form-select mb-3"
+            aria-label="Default select example"
+            name="status"
+            id="editStatus"
+          >
+            <option selected>Open this status</option>
+            <option value="in_progress">in Progress</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 100px">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <script src="edit-script.js"></script>
+  </body>
+</html>
