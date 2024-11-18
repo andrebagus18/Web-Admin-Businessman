@@ -20,66 +20,71 @@
         >
       </div>
       <h2>Edit Data</h2>
-      <form id="editForm">
+      <form id="editForm" action="" method="post">
         <div class="form-group">
           <label for="customer">Customer</label>
           <input
             type="text"
             class="form-control"
-            id="editCustomer"
+            id="customer"
             name="customer"
             required
           />
         </div>
         <div class="form-group">
-          <label for="idOrder">ID Order</label>
+          <label for="editIdOrder">ID Order</label>
           <input
             type="text"
             class="form-control"
             id="editIdOrder"
-            name="idOrder"
+            name="editIdOrder"
             required
           />
         </div>
         <div class="form-group">
-          <label for="dp">Down Payment</label>
+          <label for="editDp">Down Payment</label>
           <input
             type="number"
             class="form-control"
             id="editDp"
-            name="dp"
+            name="editDp"
             required
           />
         </div>
         <div class="form-group">
-          <label for="desc">Description</label>
+          <label for="editDesc">Description</label>
           <input
             type="text"
             class="form-control"
             id="editDesc"
-            name="desc"
+            name="editDesc"
             required
           />
         </div>
         <div class="form-group">
-          <label for="dateIn">Date In</label>
-          <input type="date" class="form-control" id="editDateIn" name="date" />
+          <label for="editDateIn">Date In</label>
+          <input
+            type="date"
+            class="form-control"
+            id="editDateIn"
+            name="editDateIn"
+          />
         </div>
         <div class="form-group">
-          <label for="dateOut">Date Out</label>
+          <label for="editDateOut">Date Out</label>
           <input
             type="date"
             class="form-control"
             id="editDateOut"
-            name="date"
+            name="editDateOut"
           />
         </div>
         <div class="form-group">
-          <label for="status">Status</label>
+          <label for="editStatus">Status</label>
           <select
             class="form-select mb-3"
             aria-label="Default select example"
-            name="status"
+            name="editStatus"
             id="editStatus"
           >
             <option selected>Open this status</option>
@@ -91,6 +96,37 @@
           Submit
         </button>
       </form>
+    </div>
+
+    <!-- Modal for success message -->
+    <div
+      class="modal"
+      id="successModal"
+      tabindex="-1"
+      aria-labelledby="successModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span><i class="icon-click bi bi-check-circle"></i></span>
+          </div>
+          <div class="modal-body">
+            <h5 class="modal-title" id="successModalLabel">Success!</h5>
+            Your data has been successfully saved
+          </div>
+          <div class="modal-done">
+            <button
+              id="closeModalButton"
+              type="button"
+              class="done btn btn-success"
+              data-bs-dismiss="modal"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="edit-script.js"></script>

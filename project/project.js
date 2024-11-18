@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         status: status,
       });
       localStorage.setItem("tableData", JSON.stringify(tableData));
-      console.log(tableData);
+      // console.log(tableData);
 
       // Tampilkan modal success
       modal.classList.toggle("active");
@@ -76,11 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
       editButton.setAttribute("type", "button");
       editButton.setAttribute("id", "buttonEdit");
       editButton.className = "btn btn-primary btn-sm me-2";
-      editButton.addEventListener("click", () => {
+      editButton.addEventListener("click", (event) => {
+        event.preventDefault();
         // Aksi edit
-        // window.location.href = "../form-edit/form-edit.html?id=" + index;
-        // alert("Edit row " + (index + 1));
-        const url = `../form-edit/form-edit.html?id=${index}`;
+        const customer = document.querySelector("#customer");
+        console.log(customer);
+        const editIdOrder = document.querySelector("#editIdOrder");
+        const editDp = document.querySelector("#editDp");
+        const editDesc = document.querySelector("#editDesc");
+        const editDateIn = document.querySelector("#editDateIn");
+        const editDateOut = document.querySelector("#editDateOut");
+        const editStatus = document.querySelector("#editStatus");
+        const tableData = JSON.parse(localStorage.getItem("tableData"));
+        tableData.push({
+          customer: customer,
+          editIdOrder: editIdOrder,
+          editDp: editDp,
+          editDesc: editDesc,
+          editDateIn: editDateIn,
+          editDateOut: editDateOut,
+          editStatus: editStatus,
+        });
+
+        const url = `../form-edit/form-edit.html?id=${index + 1}`;
         console.log("Redirecting to:", url); // Log URL
         window.open(url, "_blank");
       });
