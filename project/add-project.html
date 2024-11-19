@@ -43,21 +43,27 @@
         </div>
         <div class="form-group">
           <label for="idOrder">ID Order</label>
-          <input
-            type="text"
-            class="form-control"
-            id="idOrder"
+          <select
+            class="form-select mb-3"
+            aria-label="Default select example"
             name="idOrder"
-            required
-          />
+            id="idOrder"
+          >
+            <option value="sablon_kaos">Sablon Kaos</option>
+            <option value="stiker">Stiker</option>
+            <option value="banner">Banner</option>
+            <option value="nota">Nota</option>
+            <option value="souvenir">Souvenir</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="dp">Down Payment</label>
           <input
-            type="number"
+            type="text"
             class="form-control"
             id="dp"
             name="dp"
+            placeholder="Rp 0"
             required
           />
         </div>
@@ -87,8 +93,7 @@
             name="status"
             id="status"
           >
-            <option selected>Open this status</option>
-            <option value="in_progress">in Progress</option>
+            <option value="in_progress">In Progress</option>
             <option value="done">Done</option>
           </select>
         </div>
@@ -136,5 +141,27 @@
     ></script>
 
     <script src="project.js"></script>
+    <script>
+      document.getElementById('dp').addEventListener('input', function(event) {
+    let value = event.target.value;
+
+    // Hilangkan karakter selain angka
+    value = value.replace(/[^0-9]/g, '');
+
+    // Format angka dengan tanda pemisah ribuan dan mata uang (contoh: Rp 1.000.000)
+    let formattedValue = formatCurrency(value);
+
+    // Tampilkan hasil format ke dalam input
+    event.target.value = formattedValue;
+});
+
+function formatCurrency(value) {
+    // Format angka menggunakan Intl.NumberFormat untuk format Indonesia (Rp)
+    let number = Number(value);
+    if (isNaN(number)) return '';
+
+    return 'Rp ' + number.toLocaleString('id-ID');
+}
+    </script>
   </body>
 </html>

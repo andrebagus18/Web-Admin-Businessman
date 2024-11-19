@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
           editStatus: editStatus,
         });
 
-        const url = `../form-edit/form-edit.html?id=${index + 1}`;
+        const url = `../BELAJAR/form-edit/form-edit.html?id=${index + 1}`;
         console.log("Redirecting to:", url); // Log URL
         window.open(url, "_blank");
       });
