@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const dateIn = document.querySelector("#dateIn").value;
       const dateOut = document.querySelector("#dateOut").value;
       const status = document.querySelector("#status").value;
-      // const customer = $("#customer").val();
+       //const customer = $("#customer").val();
       // const idOrder = $("#idOrder").val();
       // const dp = $("#dp").val();
       // const desc = $("#desc").val();
@@ -78,30 +78,27 @@ document.addEventListener("DOMContentLoaded", () => {
       editButton.className = "btn btn-primary btn-sm me-2";
       editButton.addEventListener("click", (event) => {
         event.preventDefault();
-        // Aksi edit
-        const customer = document.querySelector("#customer");
-        console.log(customer);
-        const editIdOrder = document.querySelector("#editIdOrder");
-        const editDp = document.querySelector("#editDp");
-        const editDesc = document.querySelector("#editDesc");
-        const editDateIn = document.querySelector("#editDateIn");
-        const editDateOut = document.querySelector("#editDateOut");
-        const editStatus = document.querySelector("#editStatus");
-        const tableData = JSON.parse(localStorage.getItem("tableData"));
-        tableData.push({
-          customer: customer,
-          editIdOrder: editIdOrder,
-          editDp: editDp,
-          editDesc: editDesc,
-          editDateIn: editDateIn,
-          editDateOut: editDateOut,
-          editStatus: editStatus,
-        });
+        const row = editButton.closest('tr');
+        // const customerValue = row.children[1].textContent;
+        // const editCustomer = document.querySelector('#editCustomer');
+        //  if (editCustomer) {
+        //   editCustomer.value = customerValue;
+        //  }
+        // console.log(editCustomer);
 
-        const url = `../BELAJAR/form-edit/form-edit.html?id=${index + 1}`;
-        console.log("Redirecting to:", url); // Log URL
-        window.open(url, "_blank");
-      });
+         const customer = row.children[1].textContent;
+         const idOrder = row.children[2].textContent;
+         const dp = row.children[3].textContent;
+         const desc = row.children[4].textContent;
+         const dateIn = row.children[5].textContent;
+         const dateOut = row.children[6].textContent;
+         const status = row.children[7].textContent;
+         console.log(customer);
+            const url = `../BELAJAR/form-edit/form-edit.html?customer=${encodeURIComponent(customer)}&idOrder=${encodeURIComponent(idOrder)}&dp=${encodeURIComponent(dp)}`;
+            console.log("Redirecting to:", url); // Log URL
+            window.open(url, "_blank");
+          // });
+        });
 
       const deleteButton = document.createElement("button");
       deleteButton.textContent = "Delete";

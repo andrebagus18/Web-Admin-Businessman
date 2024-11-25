@@ -1,3 +1,41 @@
+
+ 
+ 
+ document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+
+    // Ambil parameter dari URL
+    const customer = params.get("customer") || "Data tidak ditemukan";
+    const idOrder = params.get("idOrder") || "Data tidak ditemukan";
+    const dp = params.get("dp") || "Data tidak ditemukan";
+
+    // Masukkan ke dalam form
+    document.querySelector("#editCustomer").value = customer;
+    document.querySelector("#editIdOrder").value = idOrder;
+    document.querySelector("#editDp").value = dp;
+
+    console.log("Customer:", customer);
+    console.log("ID Order:", idOrder);
+    console.log("DP:", dp);
+});
+
+ 
+//  // Ambil query string dari URL
+//  const params = new URLSearchParams(window.location.search);
+//  console.log(window.location.search);
+
+//  // Ambil data dari parameter
+//  const customer = params.get("customer") || "customer not found";
+//  const editIdOrder = params.get("editIdOrder");
+//  console.log(customer);
+
+//  // Masukkan data ke form
+//  document.getElementById("editCustomer").value = customer || "";
+//  document.getElementById("editIdOrder").value = editIdOrder || " ";
+//  console.log("customer:", customer);
+//  console.log(editIdOrder);
+
+//  document.getElementById("age").value = age || "";
 // const editForm = document.querySelector("#editForm");
 // const modal = document.querySelector(".modal");
 // const closeModalButton = document.querySelector("#closeModalButton");
