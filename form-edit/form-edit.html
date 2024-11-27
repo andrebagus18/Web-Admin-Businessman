@@ -32,22 +32,29 @@
           />
         </div>
         <div class="form-group">
-          <label for="editIdOrder">ID Order</label>
-          <input
-            type="text"
-            class="form-control"
-            id="editIdOrder"
+          <label for="editIdOrder">ID Pesanan</label>
+          <select
+            class="form-select mb-3"
+            aria-label="Default select example"
             name="editIdOrder"
-            required
-          />
+            id="editIdOrder"
+          >
+            <option value="sablon_kaos">Sablon Kaos</option>
+            <option value="stiker">Stiker</option>
+            <option value="banner">Banner</option>
+            <option value="nota">Nota</option>
+            <option value="souvenir">Souvenir</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="editDp">Down Payment</label>
           <input
-            type="number"
+            type="text"
             class="form-control"
             id="editDp"
             name="editDp"
+            value=""
+            placeholder="Rp"
             required
           />
         </div>
@@ -63,12 +70,7 @@
         </div>
         <div class="form-group">
           <label for="editDateIn">Date In</label>
-          <input
-            type="date"
-            class="form-control"
-            id="editDateIn"
-            name="editDateIn"
-          />
+          <input type="date" class="form-control" id="editDateIn" name="date" />
         </div>
         <div class="form-group">
           <label for="editDateOut">Date Out</label>
@@ -76,7 +78,7 @@
             type="date"
             class="form-control"
             id="editDateOut"
-            name="editDateOut"
+            name="date"
           />
         </div>
         <div class="form-group">

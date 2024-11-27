@@ -42,7 +42,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="idOrder">ID Order</label>
+          <label for="idOrder">ID Pesanan</label>
           <select
             class="form-select mb-3"
             aria-label="Default select example"
@@ -63,7 +63,7 @@
             class="form-control"
             id="dp"
             name="dp"
-            placeholder="Rp 0"
+            placeholder="Rp"
             required
           />
         </div>
@@ -142,26 +142,26 @@
 
     <script src="project.js"></script>
     <script>
-      document.getElementById('dp').addEventListener('input', function(event) {
-    let value = event.target.value;
+      document.getElementById("dp").addEventListener("input", function (event) {
+        let value = event.target.value;
 
-    // Hilangkan karakter selain angka
-    value = value.replace(/[^0-9]/g, '');
+        // Hilangkan karakter selain angka
+        value = value.replace(/[^0-9]/g, "");
 
-    // Format angka dengan tanda pemisah ribuan dan mata uang (contoh: Rp 1.000.000)
-    let formattedValue = formatCurrency(value);
+        // Format angka dengan tanda pemisah ribuan dan mata uang (contoh: Rp 1.000.000)
+        let formattedValue = formatCurrency(value);
 
-    // Tampilkan hasil format ke dalam input
-    event.target.value = formattedValue;
-});
+        // Tampilkan hasil format ke dalam input
+        event.target.value = formattedValue;
+      });
 
-function formatCurrency(value) {
-    // Format angka menggunakan Intl.NumberFormat untuk format Indonesia (Rp)
-    let number = Number(value);
-    if (isNaN(number)) return '';
+      function formatCurrency(value) {
+        // Format angka menggunakan Intl.NumberFormat untuk format Indonesia (Rp)
+        let number = Number(value);
+        if (isNaN(number)) return "";
 
-    return 'Rp ' + number.toLocaleString('id-ID');
-}
+        return "Rp " + number.toLocaleString("id-ID");
+      }
     </script>
   </body>
 </html>
